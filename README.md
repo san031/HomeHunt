@@ -1,12 +1,46 @@
-# React + Vite
+# HomeHunt
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+A  React-based platform where users can explore, search, and add real estate properties.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# Tech Stack
 
-## Expanding the ESLint configuration
+## Frontend
+- **Framework:** React.js (with Hooks)  
+- **Styling:** Tailwind CSS
+- **Routing:** React Router  
+- **Forms:** React Hook Form
+- **State Management:** Redux Toolkit
+- **Maps:**  Google Maps API  
+- **Image Handling:** Appwrite Bucket feature
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+##  Backend 
+- Appwrite 
+
+
+## Key Features
+
+### User Features
+- Home page with featured listings
+- Search bar 
+- Filters for bedrooms, amenities
+- Map view with Google Maps
+- View property gallery, description, and location
+- Contact form to reach property owner/agent
+
+
+### Admin Features
+- Secure login to admin dashboard
+- Add/edit/delete properties
+- Upload multiple property images
+- View total property count, inquiries, views
+
+
+
+## Contributing
+
+Pull requests are welcome. For major changes, please open an issue first
+to discuss what you would like to change.
+
+Please make sure to update tests as appropriate.
+
