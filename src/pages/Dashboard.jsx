@@ -22,7 +22,6 @@ function Dashboard() {
 
   return (
     <div>
-      <SpaceForm/>
       <ul>
         {spaces.map((space) => 
             <li key={space.$id}>

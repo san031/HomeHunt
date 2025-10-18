@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import parse from 'html-react-parser'
 import { Link, useNavigate, useParams } from 'react-router'
 import { useSelector } from 'react-redux'
 import appwriteService from '../appwrite/config'
@@ -9,26 +8,22 @@ import {FaBath, IoIosBed} from '../utils/index'
 import { GoogleMap, useLoadScript, Marker } from '@react-google-maps/api';
 import Geolocation from '../components/Geolocation'
 import GeoCoding from '../components/GeoCoding'
+import Amenities from './Amenities'
+import Location from './Location'
 
-const libraries = ['places'];
-const mapContainerStyle = {
-  width: '100%',
-  height: '200%',
-};
-const center = {
-  lat: 25.2905715, // default latitude
-  lng: 77.6337262, // default longitude
-};
+
+
 
 function Space() {
   const [space,setSpace] = useState(null)
+  const [address,setAddress] = useState("")
   const {slug} = useParams()
   const navigate = useNavigate()
 
   const userData = useSelector((state) => state.auth.userData)
 
   const isAuthor = space && userData ? userData.$id===space.userId:false
-  
+
 
   useEffect(() => {
     if(slug){
@@ -50,26 +45,17 @@ function Space() {
     })
   }
 
-  const { isLoaded, loadError } = useLoadScript({
-    googleMapsApiKey: 'AIzaSyDKb_sj0RRc1aeSiU0SIb3ya8Av2PW9rFE',
-    libraries,
-  });
+  useEffect(() => {setAddress(space?.location)},[space])
 
-  if (loadError) {
-    return <div>Error loading maps</div>;
-  }
-
-  if (!isLoaded) {
-    return <div>Loading maps</div>;
-  }
+  
   return (
    space?
     <div>
       <Container className='w-full h-full border-2'>
-        <img src={appwriteService.getFileView(space.gallery)} alt={space.title} className='w-xl'/>
-        <div className='grid grid-cols-2'>
+        <img src={appwriteService.getFileView(space.gallery)} alt={space.title} className='w-4xl'/>
+        <div className='grid grid-cols-2 gap-48'>
           
-          <div className='m-3'>
+          <div className='m-3 border-2 w-2xl h-screen'>
             
           <div >
             <h1 className='text-3xl font-bold m-2'>
@@ -77,6 +63,7 @@ function Space() {
           </h1>
           <div>
             {space.location}
+            
           </div>
            
            <div className='flex flex-row'>
@@ -90,9 +77,9 @@ function Space() {
             {space.bathroom} bathrooms
            </div>
 
-           {/* <div>
+           <div>
             {space.elevator?'elevator   |':''}
-           </div> */}
+           </div>
 
            <div>
             {space.city}
@@ -108,7 +95,30 @@ function Space() {
           </div>
           </div>
 
-          <div>
+          <div className='border-2 m-3 p-5 '>
+            <div className='glass w-full h-full text-center '>
+              <h1 className='text-3xl font-bold pb-8'>Rs.{space.price}/month</h1>
+              <h3 className='text-[1.25em] pb-8'>{space.dateAvailable?
+              
+              `Date Available : ${new Date(space.dateAvailable).toLocaleDateString("en-GB",{day:'numeric' , month: "long", year: "numeric" })}`:""}</h3>
+
+              <h3 className='text-[1.15em] pb-8 text-left'>All utilities are included</h3>
+
+              <h3 className='text-[1.15em] pb-8 text-left'>Average monthly rent</h3>
+
+              <h3 className='text-[1.15em] pb-8 text-left'>Pay Upon Booking</h3>
+
+              <h3 className='text-[1.15em] pb-8 text-left'>Total Costs</h3>
+
+              <Button margin='m-5' className='pointer' onClick = {() => navigate('/booking-review')}>Continue Booking</Button>
+
+              <p>When you book this apartment , your reservation will be confirmed instantly</p>
+              
+            </div>
+          </div>
+          
+
+          {/* <div>
             <GoogleMap
         mapContainerStyle={mapContainerStyle}
         zoom={10}
@@ -120,8 +130,8 @@ function Space() {
       <Geolocation/>
       <GeoCoding location={location}/>
 
-      {/* <GeoCoding location={space?.location}/> */}
-          </div>
+      <GeoCoding location={space?.location}/>
+          </div> */}
           
         </div>
 
@@ -134,6 +144,8 @@ function Space() {
           )
         }
       </Container>
+      <Amenities/> 
+      <Location location = {address}/>
     </div>
    :null
   )

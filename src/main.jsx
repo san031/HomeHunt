@@ -22,6 +22,8 @@ import Dashboard from './pages/Dashboard.jsx'
 import EditSpace from './admin/EditSpace.jsx'
 import Space from './pages/Space.jsx'
 import Search from './components/Search.jsx'
+import BookingReview from './pages/BookingReview.jsx'
+import GuestDetails from './pages/GuestDetails.jsx'
 
 
 
@@ -82,6 +84,14 @@ const router = createBrowserRouter([
       // )
     },
 
+    {
+      path:'/booking-review',
+      element:<BookingReview/>
+    },  
+    {
+      path:'/guest-details',
+      element:<GuestDetails/>
+    },
     {
       path:'/admin/dashboard',                                  // dashboard page will have add, edit, delete space from spaces 
       element:(

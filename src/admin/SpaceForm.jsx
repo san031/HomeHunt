@@ -101,7 +101,7 @@ function SpaceForm({space}) {
       //useEffect me method ko optimize krne k liye usko variable me store krk
       // aur baad me optimize krne k liye usko unsubscribe kr dete h
   return (
-    <div className='glass w-125 '>
+    <div className='glass w-125 sticky '>
       <h1 className='text-3xl font-bold text-center'>Earn more from your property, do less</h1>
       <p className='text-center'>Find out if your property meets our criteria</p>
           <form
@@ -117,6 +117,7 @@ function SpaceForm({space}) {
 
               <Input 
               placeholder="Description"
+              type='textarea'
               className="mb-4 w-110 rounded-lg h-9 bg-gray-200"
               {...register("description",{required:true})}/>
 

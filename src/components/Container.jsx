@@ -1,10 +1,10 @@
 import React from 'react'
 
-function Container({className="",children}) {
+function Container({className="",width='w-full',height='h-170',children}) {
   return (
     <div className={`
-    h-170
-    w-full
+   ${height}
+   ${width}
     relative
     
     ${className}

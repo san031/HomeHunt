@@ -17,21 +17,21 @@ import SpaceForm from '../admin/SpaceForm'
 function Landlords() {
   return (
     <div>
-      <Container className="w-full h-36 ">
-        <div>
+      <Container>
+        <div className="w-full h-36 ">
           <img
             src={landlordsHeader}
             alt=""
             className="absolute h-screen w-full"
           />
-          <div className=" float-right pr-11">
+          <div className=" float-right pr-11 sticky">
             <Addspace />
           </div>
         </div>
       </Container>
 
 {/* <SpaceForm/> */}
-      <Container className="w-full py-22 px-18 h-[30%]">
+      <Container className="w-full py-22 px-18 h-[90%] ">
         <h1 className="text-3xl font-bold text-center">
           {" "}
           Better than property Management
@@ -68,7 +68,7 @@ function Landlords() {
         </div>
       </Container>
 
-      <Container className="flow w-full h-dvw bg-green-100">
+      <Container className="flow w-full h-dvw bg-green-50">
         <p className="text-3xl font-bold text-center">How it works</p>
         <div className="timeline">
           <div className="events">
