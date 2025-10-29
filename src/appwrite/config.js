@@ -227,6 +227,18 @@ export class Service{
         }
     }
 
+    // async createCustomer(){
+    //     try {
+    //         const res = await this.databases.createDocument(
+    //             conf.appwriteDatabaseId,
+    //             conf.appwriteCustomerCollectionId,
+                
+    //         )
+    //     } catch (error) {
+            
+    //     }   
+    // }
+
 }
 
 

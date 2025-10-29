@@ -7,7 +7,7 @@ import Button from './Button'
 function Footer() {
   return (
     <div>
-      <Container className='p-2 mt-5.5' height='h-[60%]'>
+      <Container className='p-2 mt-5.5 bg-gray-50' height='h-[60%]'>
         <div className='grid grid-cols-3'>
           <div>
             <div className='mr-4'>

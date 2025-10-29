@@ -68,10 +68,10 @@ function Landlords() {
         </div>
       </Container>
 
-      <Container className="flow w-full h-dvw bg-green-50">
+      <Container className="flow w-full h-dvw bg-gray-500 text-white">
         <p className="text-3xl font-bold text-center">How it works</p>
-        <div className="timeline">
-          <div className="events">
+        <div className="timeline ">
+          <div className="events ">
             <div className="event life">
               <svg
                 class="marker"

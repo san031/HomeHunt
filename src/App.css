@@ -142,9 +142,9 @@ height: 90%;
 top: 226px; */
  left:50%;
 /* Text */
-border: 1px solid #181A18;
+border: 1px solid wheat;
 margin: 0.5em;
-
+/* color: white; */
 }
 
 .event.life{

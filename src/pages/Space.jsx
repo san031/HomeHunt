@@ -10,6 +10,7 @@ import Geolocation from '../components/Geolocation'
 import GeoCoding from '../components/GeoCoding'
 import Amenities from './Amenities'
 import Location from './Location'
+import BookingReview from './BookingReview'
 
 
 
@@ -51,71 +52,56 @@ function Space() {
   return (
    space?
     <div>
-      <Container className='w-full h-full border-2'>
-        <img src={appwriteService.getFileView(space.gallery)} alt={space.title} className='w-4xl'/>
-        <div className='grid grid-cols-2 gap-48'>
+      <Container className='w-4xl h-full  '>
+        <img src={appwriteService.getFileView(space.gallery)} alt={space.title} className='w-4xl border-2'/>
+        <div className='grid grid-cols-[2fr_1fr]  gap-48 '>
           
-          <div className='m-3 border-2 w-2xl h-screen'>
+          <div className='m-3 w-2xl h-screen relative left-14 p-8'>
             
           <div >
-            <h1 className='text-3xl font-bold m-2'>
+            <h1 className='text-4xl font-bold m-auto mb-3'>
             {space.title}
           </h1>
-          <div>
+          <div className='mb-4 text-1.5xl'>
             {space.location}
             
           </div>
            
-           <div className='flex flex-row'>
-            <div className='m-3 flex flex-row gap-1.5'>
+           <div className='flex flex-row mb-5'>
+           <div> 
+            <div className=' gap-1.5 text-1.5xl'>
             <IoIosBed size={25}/>
             {space.bedroom} bedrooms
            </div>
 
-           <div className='m-3 flex flex-row gap-1.5'>
+           <div className='  gap-1.5 text-1.5xl'>
             <FaBath size={25}/>
             {space.bathroom} bathrooms
            </div>
 
+           
+           </div>
            <div>
+            <div>
             {space.elevator?'elevator   |':''}
            </div>
 
-           <div>
+           <div className='text-1.5xl'>
             {space.city}
+           </div>
            </div>
            </div>
 
 
           
           </div>
-          <div>
-            <h3 className='text-2xl font-bold'>Description</h3>
+          <div className='text-1.5xl'>
+            <h3 className='text-4xl font-bold mb-1.5'>Description</h3>
             {space.description}
           </div>
           </div>
 
-          <div className='border-2 m-3 p-5 '>
-            <div className='glass w-full h-full text-center '>
-              <h1 className='text-3xl font-bold pb-8'>Rs.{space.price}/month</h1>
-              <h3 className='text-[1.25em] pb-8'>{space.dateAvailable?
-              
-              `Date Available : ${new Date(space.dateAvailable).toLocaleDateString("en-GB",{day:'numeric' , month: "long", year: "numeric" })}`:""}</h3>
-
-              <h3 className='text-[1.15em] pb-8 text-left'>All utilities are included</h3>
-
-              <h3 className='text-[1.15em] pb-8 text-left'>Average monthly rent</h3>
-
-              <h3 className='text-[1.15em] pb-8 text-left'>Pay Upon Booking</h3>
-
-              <h3 className='text-[1.15em] pb-8 text-left'>Total Costs</h3>
-
-              <Button margin='m-5' className='pointer' onClick = {() => navigate('/booking-review')}>Continue Booking</Button>
-
-              <p>When you book this apartment , your reservation will be confirmed instantly</p>
-              
-            </div>
-          </div>
+        <BookingReview space={space}/>
           
 
           {/* <div>

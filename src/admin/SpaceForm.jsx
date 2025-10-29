@@ -132,6 +132,8 @@ function SpaceForm({space}) {
               className="mb-4  w-110 rounded-lg h-9 bg-gray-200"
               {...register("location",{required:true})}/>
 
+              <Input type='checkbox' label='status' {...register("status")}/>
+
 {/*               
               <Select 
               className="mb-4"

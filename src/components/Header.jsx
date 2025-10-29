@@ -17,9 +17,9 @@ function Header() {
     {name:"Dashboard", slug:"/admin/dashboard",active:authStatus},   
   ]
   return (
-    <div>
+    <div className='fixed z-10 bg-gray-50 w-full mb-20'>
         {/* <Container> */}
-            <nav className='flex'>
+            <nav className='flex '>
               {/* <Logo/> */}
               {/* <Link to='home'>Home</Link>
               <Link to='landlords'>Landlords</Link>
