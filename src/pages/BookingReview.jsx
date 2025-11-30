@@ -6,8 +6,9 @@ function BookingReview({space}) {
 
   const navigate = useNavigate()
   const [isGuestDetail,setisGuestDetail] = useState(true)
+  console.log(space?.price);
   return (
-    <div>  <div className=' m-3 p-5 relative right-20 '>
+     <div className=' m-3 p-5 '>
             <div className='glass w-96 h-full text-center shadow-xl/30 '>
               <h1 className='text-3xl font-bold pb-8'>Rs.{space?.price}/month</h1>
               <h3 className='text-[1.25em] pb-8'>{space?.dateAvailable?
@@ -35,7 +36,7 @@ function BookingReview({space}) {
               <p>When you book this apartment , your reservation will be confirmed instantly</p>
               
             </div>
-          </div></div>
+          </div>
   )
 }
 

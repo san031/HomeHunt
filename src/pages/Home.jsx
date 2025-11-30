@@ -20,6 +20,7 @@ import '../App.css'
 import Button from '../components/Button';
 import { useNavigate } from 'react-router';
 import SearchBar from '../components/SearchBar'
+import GlassCard from '../components/GlassCard';
 
 function Home() {
 
@@ -60,46 +61,48 @@ a new city.  Just bring your bags, and we’ll handle the rest.</p>
           
       </Container>
       <Container>
-        <div className='grid grid-rows-2  py-22 px-18'>
-          <div className='mx-auto my-0 text-center p-20' >
+        <div className='w-full  py-22 relative bottom-40 md:bottom-10 lg:top-24   px-18 h-[90%] text-center '>
+          
             <h2 className='text-3xl font-bold '>Id aliquam molestie nunc quis turpis imperdiet quis</h2>
             <p>Euismod condimentum tempus quis nibh. Accumsan imperdiet non vulputate venenatis, lorem amet, purus amet, sagittis. Cum orci quam enim adipiscing interdum purus.</p>
-          </div>
-          <div className='flex gap-2.5 features'>
-            <div className="glass ">
-              <FaCalendarMinus style={{fontSize:'35px', margin:'0 auto'}}/>
-              <p className='font-bold'>Flexible living</p>
-              <p className='text-[13px]'>We believe in a world where finding a home is just a click away. 
+          
+          <div className='grid grid-cols-1 md:grid-cols-[1fr_1fr] xl:grid-cols-4 gap-2.5 features'>
+
+            <GlassCard
+             glassIcon={<FaCalendarMinus style={{fontSize:'35px', margin:'0 auto'}}/>}
+             glassHead="Flexible living"
+             glassText="We believe in a world where finding a home is just a click away. 
 Whether you’re selling your home, travelling for work or moving to 
-a new city.  Just bring your bags, and we’ll handle the rest.</p>
-            </div>
-            <div className="glass  border-2 border-black">
-              <GiSofa style={{fontSize:'35px', margin:'0 auto'}} />
-              <p className='font-bold'>Move-in ready</p>
-              <p className='text-[13px]'>Ready to move in with everything you need</p>
-            </div>
-            <div className="glass">
-              <FaWifi style={{fontSize:'35px', margin:'0 auto'}}/>
-              <p className='font-bold '>High-speed Wi-Fi</p>
-              <p className='text-[13px]'>Best in class internet speeds suitable to working from home</p>
-            </div>
-            <div className="glass">
-              <BsChat style={{fontSize:'35px', margin:'0 auto'}}/>
-              <p className='font-bold'>
-                24/7 support
-              </p>
-              <p className='text-[13px]'>
-                On hand team for any issues you have
-              </p>
-            </div>
+a new city.  Just bring your bags, and we’ll handle the rest."
+             />
+
+
+            <GlassCard
+             glassIcon={<GiSofa style={{fontSize:'35px', margin:'0 auto'}}/>}
+             glassHead="Move-in ready"
+             glassText="Ready to move in with everything you need"
+             />
+
+            <GlassCard
+             glassIcon={<FaWifi style={{fontSize:'35px', margin:'0 auto'}}/>}
+             glassHead="High-speed Wi-Fi"
+             glassText="Best in class internet speeds suitable to working from home"
+             />
+            
+
+            <GlassCard
+             glassIcon={<BsChat style={{fontSize:'35px', margin:'0 auto'}}/>}
+             glassHead="24/7 support"
+             glassText="On hand team for any issues you have"
+             />
           </div>
 
         </div>
       </Container>
       <Container className=' py-18 px-11 h-[110%]'>
-        <div className='address flex flex-col text-center'>
+        <div className='address flex flex-col justify-evenly flex-wrap text-center'>
           <p className='text-3xl font-bold'>Choose your location</p>
-          <div className='grid grid-cols-6 addressimg'>
+          <div className='grid grid-cols-3 md:grid-cols-6 addressimg'>
             <div >
               <p>Shoreditch</p>
               <img src={shoreditch} alt="" className='w-full h-full' />

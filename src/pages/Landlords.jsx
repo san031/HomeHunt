@@ -14,17 +14,18 @@ import { BiSolidBriefcaseAlt } from "react-icons/bi";
 import { RiPantoneFill } from "react-icons/ri";
 import { BsSunFill } from "react-icons/bs";
 import SpaceForm from '../admin/SpaceForm'
+import GlassCard from '../components/GlassCard'
 function Landlords() {
   return (
     <div>
       <Container>
-        <div className="w-full h-36 ">
+        <div className="w-full md:h-36 ">
           <img
             src={landlordsHeader}
             alt=""
-            className="absolute h-screen w-full"
+            className="absolute md:h-screen md:w-full h-[160%]"
           />
-          <div className=" float-right pr-11 sticky">
+          <div className=" float-right pr-11 md:sticky">
             <Addspace />
           </div>
         </div>
@@ -42,29 +43,30 @@ function Landlords() {
           your needs.
         </p>
 
-        <div className="flex gap-2.5 features">
-          <div className="glass ">
-            <FaUnlock style={{ fontSize: "35px", margin: "0 auto" }} />
-            <p>Guaranteed rent</p>
-            <p>We do the searching for you</p>
-          </div>
-          <div className="glass  border-2 border-black">
-            <IoMdPricetag style={{ fontSize: "35px", margin: "0 auto" }} />
-            <p>No fees</p>
-            <p>Preferred partner rates</p>
-          </div>
-          <div className="glass">
-            <MdOutlineApartment
-              style={{ fontSize: "35px", margin: "0 auto" }}
-            />
-            <p>No voids</p>
-            <p>Preferred partner rates</p>
-          </div>
-          <div className="glass">
-            <TbHours24 style={{ fontSize: "35px", margin: "0 auto" }} />
-            <p>24/7 maintenance</p>
-            <p>Extend on short notice</p>
-          </div>
+        <div className="grid grid-cols-1 md:grid-cols-[1fr_1fr] xl:grid-cols-4 gap-2.5 features ">
+         
+          <GlassCard
+             glassIcon={<FaUnlock style={{fontSize:'35px', margin:'0 auto'}}/>}
+             glassHead="Guaranteed rent"
+             glassText="We do the searching for you"
+             />
+        
+          <GlassCard
+             glassIcon={<IoMdPricetag style={{fontSize:'35px', margin:'0 auto'}}/>}
+             glassHead="No fees"
+             glassText="Preferred partner rates"
+             />
+          <GlassCard
+             glassIcon={<MdOutlineApartment style={{fontSize:'35px', margin:'0 auto'}}/>}
+             glassHead="No voids"
+             glassText="Preferred partner rates"
+             />
+          
+          <GlassCard
+             glassIcon={<TbHours24 style={{fontSize:'35px', margin:'0 auto'}}/>}
+             glassHead="24/7 maintenance"
+             glassText="Extend on short notice"
+             />
         </div>
       </Container>
 

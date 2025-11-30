@@ -31,7 +31,10 @@ const router = createBrowserRouter([
   {path:"", 
   element:<Layout/>,
   children:[
-    {path:"/", element:<Home/>},
+    {path:"/", element:
+        <Home/>
+      
+    },
     {path:"/search",element:<Search/>},
     {path:"/landlords", element:(                          //landlords k page admin ko hi accessible hona chahiye,        
       <AuthLayout authentication>    

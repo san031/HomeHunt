@@ -22,8 +22,8 @@ function EditSpace() {
     
   return (
     space?
-    <Container>
-      {console.log(space)}
+    <Container className='h-full mx-0 my-auto'>
+      {/* {console.log(space)} */}
         <SpaceForm space={space} />
     </Container>
     : null

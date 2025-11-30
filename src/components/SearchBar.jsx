@@ -37,7 +37,7 @@ function SearchBar() {
     <div>
       <form
       onSubmit={handleSubmit(handleSearch)}
-      className='search-box border-4 border-green-900'>
+      className='search-box border-4 border-green-900 relative '>
         <div className='flex flex-row sample'>
           <IoSearchSharp />
           {/* <Select label="Select a city" options={["Jaipur","Jodhpur","Ranchi","Jeruselum"]}/>

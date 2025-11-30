@@ -17,7 +17,10 @@ function Header() {
     {name:"Dashboard", slug:"/admin/dashboard",active:authStatus},   
   ]
   return (
-    <div className='fixed z-10 bg-gray-50 w-full mb-20'>
+    <div className='fixed z-10 
+    bg-[rgba(200,209,203,0.8)]
+     w-full mb-20     
+'>
         {/* <Container> */}
             <nav className='flex '>
               {/* <Logo/> */}

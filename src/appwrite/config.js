@@ -15,7 +15,7 @@ export class Service{
         this.bucket = new Storage(this.client)
     }
 
-    async createPost({title,slug,city, description, location, gallery, status,userId,bedroom,bathroom,price, contactNo,
+    async createPost({title,slug,city, description, location, gallery, status,bedroom,bathroom,price, contactNo,
         disabledAccess,parking,elevator,washingMachine,dishwasher,dateAvailable
      }){
         try{
@@ -37,7 +37,6 @@ export class Service{
                     contactNo,
                     disabledAccess,parking,elevator,washingMachine,dishwasher,
                     dateAvailable,
-                    userId,
                     
                 }
             )
@@ -227,17 +226,24 @@ export class Service{
         }
     }
 
-    // async createCustomer(){
-    //     try {
-    //         const res = await this.databases.createDocument(
-    //             conf.appwriteDatabaseId,
-    //             conf.appwriteCustomerCollectionId,
-                
-    //         )
-    //     } catch (error) {
-            
-    //     }   
-    // }
+    async createCustomer({first_name,last_name,email,contactNo}){
+        try {
+            const res = await this.databases.createDocument(
+                conf.appwriteDatabaseId,
+                conf.appwriteCustomerCollectionId,
+                ID.unique(),
+                {
+                    first_name,
+                    last_name,
+                    email,
+                    contactNo
+                }
+            )
+            return res
+        } catch (error) {
+            console.log("Appwrite service :: createCustomer :: error", error);
+        }
+    }
 
 }
 

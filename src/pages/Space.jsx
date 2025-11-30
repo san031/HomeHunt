@@ -54,9 +54,9 @@ function Space() {
     <div>
       <Container className='w-4xl h-full  '>
         <img src={appwriteService.getFileView(space.gallery)} alt={space.title} className='w-4xl border-2'/>
-        <div className='grid grid-cols-[2fr_1fr]  gap-48 '>
+        <div className='grid md:grid-cols-[1fr_1fr] grid-rows-[1fr]  md:gap-48'>
           
-          <div className='m-3 w-2xl h-screen relative left-14 p-8'>
+          <div className='m-3 md:w-2xl h-80  relative left-14 p-8'>
             
           <div >
             <h1 className='text-4xl font-bold m-auto mb-3'>
@@ -101,8 +101,22 @@ function Space() {
           </div>
           </div>
 
-        <BookingReview space={space}/>
-          
+        {
+          !isAuthor && (
+            <div className='brcss'>
+              <BookingReview space={space}/>
+        
+            </div>
+          )
+        }
+          {
+          isAuthor&&(
+            <div className='relative top-10 '>
+              <Link to={`/edit-space/${space.$id}`}><Button>Edit</Button></Link>
+            <Button onClick={deleteSpace}>Delete</Button>
+            </div>
+          )
+        }
 
           {/* <div>
             <GoogleMap
@@ -121,17 +135,17 @@ function Space() {
           
         </div>
 
-        {
-          isAuthor&&(
+        
+      </Container>
+      {
+          !isAuthor && (
             <div>
-              <Link to={`/edit-space/${space.$id}`}><Button>Edit</Button></Link>
-            <Button onClick={deleteSpace}>Delete</Button>
+              
+        <Amenities/> 
+      <Location location = {address}/>
             </div>
           )
         }
-      </Container>
-      <Amenities/> 
-      <Location location = {address}/>
     </div>
    :null
   )

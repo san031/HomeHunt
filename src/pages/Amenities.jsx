@@ -11,7 +11,7 @@ function Amenities() {
             <h3 className='text-3xl text-center font-bold mb-15'>
               Amenities
             </h3>
-            <div className='grid grid-cols-3 gap-30'>
+            <div className='grid md:grid-cols-3 grid-cols-1  md:gap-30 mx-0 my-auto'>
               <div>
                 <div className='flex flex-row p-5 gap-1.5'>
                   <IoTvSharp size={60}/>

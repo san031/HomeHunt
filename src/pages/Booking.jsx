@@ -37,7 +37,7 @@ function Booking() {
   
   return (
     <div>
-      <Container className='h-full'>
+      <Container className='h-full '>
         <SearchBar/>
         {/* <FilterBtn/> */}
         <Button type='button' margin='mx-35 my-7'  onClick={() => setShowForm((prev) => !prev ) }>Filters</Button>
