@@ -209,11 +209,12 @@ export class Service{
             const response = await this.databases.listDocuments(
                 conf.appwriteDatabaseId,
                 conf.appwriteCollectionId,
-                [Query.equal("parking",true),
-                 Query.equal("disabledAccess",true),
-                 Query.equal("elevator",true),
-                 Query.equal("washingMachine",true),
-                 Query.equal("dishwasher",true),
+                [
+                    Query.equal("parking",true),
+                //  Query.equal("disabledAccess",true),
+                //  Query.equal("elevator",true),
+                //  Query.equal("washingMachine",true),
+                //  Query.equal("dishwasher",true),
                 //  Query.equal("bedroom",data.bedroom),
                 //  Query.equal("bathroom",data.bathroom)
                 ]
