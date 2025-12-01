@@ -111,7 +111,7 @@ function Space() {
         }
           {
           isAuthor&&(
-            <div className='relative top-10 '>
+            <div className='relative top-8 '>
               <Link to={`/edit-space/${space.$id}`}><Button>Edit</Button></Link>
             <Button onClick={deleteSpace}>Delete</Button>
             </div>

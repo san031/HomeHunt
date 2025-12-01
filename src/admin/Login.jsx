@@ -34,11 +34,11 @@ function Login() {
     }
   return (
     <Container
-    className='flex items-center justify-center w-full h-1/2'
+    className='flex items-center justify-center'
     >
-        <div className={`mx-auto w-ful max-w-lg bg-gray-100 rounded-xl border-black/10`}>
+        <div className={`mx-auto m-12 bg-gray-100 rounded-xl border-black/10`}>
         <div className='mb-2 flex justify-center'>
-            <span className='inline-block w-full max-w-[100px]'></span>
+            <span className='inline-block md:w-full min-w-[100px]'></span>
 
         </div>
         <h2 className='text-center text-2xl font-bold leading-tight'>Sign in to your account</h2>

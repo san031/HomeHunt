@@ -11,13 +11,13 @@ function Card({$id, title, gallery, description,location,city,bedroom, bathroom,
 
   return (
     <Link to = {`/space/${$id}`}>
-        <div className=' bg-gray-100 rounded-xl p-4 shadow-md shadow-green-300 mb-12.5 flex flex-row text-[18px]'>
+        <div className=' bg-gray-100 rounded-xl p-4 shadow-md shadow-green-300 mb-12.5 flex md:flex-row flex-col text-[18px]'>
             <div className='w-lg justify-center mb-4 pr-10.5'>
                 <img src={appwriteService.getFileView(gallery)}
                 alt={title}
                 className='rounded-xl w-4xl'/>
             </div>
-           <div className='w-full pl-5'>
+           <div className='md:w-full w-1/2 pl-5'>
              <h2 className='text-2xl font-bold'>{title}</h2>
 
             <p>{description}</p>
@@ -42,7 +42,7 @@ function Card({$id, title, gallery, description,location,city,bedroom, bathroom,
               <FaPhoneSquareAlt/>
               {contactNo}</div>
 
-              <div className='flex flex-row gap-2.5'>
+              <div className='flex md:flex-row flex-col gap-2.5'>
 
             <p> {disabledAccess?'disabled Access    |':''}</p> 
 

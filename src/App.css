@@ -4,6 +4,13 @@
 
 }
 
+body, html {
+  width: 100%;
+  /* Prevents horizontal scrolling/extra space if content is too wide */
+  overflow-x: hidden; 
+  margin: 0;
+  padding: 0;
+}
 .tag {
     width: 25%;
     height: 30%;
@@ -38,8 +45,8 @@
 
 .future{
   /* border:1px solid black; */
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  /* display: grid;
+  grid-template-columns: 1fr 1fr; */
   margin: 0 auto;
   /* background-color: hwb(346 82% 7% / 0.564); */
   text-align: center;

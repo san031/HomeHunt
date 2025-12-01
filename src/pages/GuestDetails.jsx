@@ -47,11 +47,11 @@ function GuestDetails({space}) {
 // : 
 // ""
   return (
-    <Container className='p-5 pl-10 '>
-      <div className='text-3xl '>Guest Details</div>
+    <Container className='p-5 md:pl-10 pl-0 md:h-full h-[80%] '>
+      <div className='text-3xl text-center '>Guest Details</div>
       <div className='grid md:grid-cols-[2fr_1fr] grid-rows-1'>
         <form onSubmit={handleSubmit(submit)} className='p-10'>
-          <div className='w-xl p-10 rounded-2xl bg-amber-50 shadow-xl/30'>
+          <div className='md:w-xl w-92 p-10 rounded-2xl bg-amber-50 shadow-xl/30'>
             <Input placeholder="First Name" 
             {...register("first_name",{required:true})}
           

@@ -36,10 +36,10 @@ function Home() {
           <img src={bright_homie} className='w-full h-full'/>
         
       </Container>
-      <SearchBar/>
-      <Container className=' w-full h-1/2 py-22 px-11'>
-      <div className='future rounded-4xl glass'>
-        <div className='img-grp'>
+      {/* <SearchBar/> */}
+      <Container className=' w-full md:h-1/2 h-full py-22 px-11'>
+      <div className='future grid grid-rows-[1fr_1fr] md:grid-cols-[1fr_1fr] rounded-4xl glass'>
+        <div className='img-grp grid grid-rows-2 md:grid-cols-2'>
             
             <img src={future7} alt="" 
             //  width='25%' height='30%'
@@ -60,8 +60,8 @@ a new city.  Just bring your bags, and we’ll handle the rest.</p>
       </div>
           
       </Container>
-      <Container>
-        <div className='w-full  py-22 relative bottom-40 md:bottom-10 lg:top-24   px-18 h-[90%] text-center '>
+      <Container className='w-full md:h-[90%] h-full'>
+        <div className='py-22 px-18  text-center '>
           
             <h2 className='text-3xl font-bold '>Id aliquam molestie nunc quis turpis imperdiet quis</h2>
             <p>Euismod condimentum tempus quis nibh. Accumsan imperdiet non vulputate venenatis, lorem amet, purus amet, sagittis. Cum orci quam enim adipiscing interdum purus.</p>
