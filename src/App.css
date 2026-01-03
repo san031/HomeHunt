@@ -12,7 +12,7 @@ body, html {
   padding: 0;
 }
 .tag {
-    width: 25%;
+    width: 50%;
     height: 30%;
     position: absolute;
     z-index: 1;
@@ -35,7 +35,7 @@ body, html {
     grid-template-columns: 2fr 2fr 2fr 1fr;
     
 }
-.search-box>div{
+.search-box{
   margin: 2% 0 0 7%;
 }
 
@@ -200,7 +200,7 @@ margin: 0.5em;
 
 }
 
-/* @media screen and (min-width:380px) and (max-width:767px) {
+@media screen and (min-width:380px) and (max-width:767px) {
   .footer{
     display: flex;
     flex-direction: column;
@@ -225,7 +225,7 @@ margin: 0.5em;
     align-items: center;
     order: 3;
   }
-} */
+}
 
 @media screen and (min-width:380px) and (max-width:767px){
   .brcss{

@@ -8,7 +8,7 @@ function Footer() {
   return (
     <div>
       <Container className='p-2 mt-5.5 bg-[rgba(229,237,232,0.8)]' height='h-[50%]'>
-        <div className='grid grid-rows-3 md:flex  items-center justify-center  '>
+        <div className='grid md:grid-cols-[1fr_2fr_1fr]  items-center justify-center  '>
           <div className='relative left-20 md:left-0'>
             <div >
                 <Logo/>
@@ -17,8 +17,8 @@ function Footer() {
 
           </div>
 
-          <div className='grid grid-rows-3 '>
-            <div className='grid grid-cols-2 md:grid-cols-3 '>
+          <div className='grid  md:grid-cols-[1fr_1fr_1fr] justify-center'>
+            <div className='grid grid-cols-2 '>
               <p className='font-bold '>Company</p>
               <div><div>Home</div>
               <div>About us</div>
@@ -42,7 +42,7 @@ function Footer() {
           <div className='relative left-6'>
             <p className='font-bold'>Stay upto date</p>
             <p>Be the first to know our newest apartments</p>
-            <Input placeholder = "Email adress"/>
+            <Input width='w-55' placeholder = "Email adress"/>
             <Button>Subscribe</Button>
           </div>
         </div>

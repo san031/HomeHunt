@@ -29,17 +29,17 @@ function Home() {
     <div>
       <Container>
 
-          <div className='tag'>
-            <p className='text-3xl font-bold mx-4'>We rent your property</p>
+          <div className='tag '>
+            <p className='md:text-3xl font-bold mx-4'>We rent your property</p>
             <p className='text-pretty mx-4'>Vel mattis integer pulvinar morbi quis amet eu. In nunc facilisis proin fermentum, consectetur cursus. </p>
           </div>
-          <img src={bright_homie} className='w-full h-full'/>
+          <img src={bright_homie} className='w-full h-full md:max-h-max max-h-[60vh] '/>
         
       </Container>
-      {/* <SearchBar/> */}
+      <SearchBar/>
       <Container className=' w-full md:h-1/2 h-full py-22 px-11'>
-      <div className='future grid grid-rows-[1fr_1fr] md:grid-cols-[1fr_1fr] rounded-4xl glass'>
-        <div className='img-grp grid grid-rows-2 md:grid-cols-2'>
+      <div className='future grid xl:grid-cols-2 rounded-4xl glass'>
+        <div className=' grid grid-rows-1 md:grid-cols-2'>
             
             <img src={future7} alt="" 
             //  width='25%' height='30%'
@@ -102,7 +102,7 @@ a new city.  Just bring your bags, and we’ll handle the rest."
       <Container className=' py-18 px-11 h-[110%]'>
         <div className='address flex flex-col justify-evenly flex-wrap text-center'>
           <p className='text-3xl font-bold'>Choose your location</p>
-          <div className='grid grid-cols-3 md:grid-cols-6 addressimg'>
+          <div className='grid grid-cols-2 md:grid-cols-6 addressimg'>
             <div >
               <p>Shoreditch</p>
               <img src={shoreditch} alt="" className='w-full h-full' />

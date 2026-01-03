@@ -6,13 +6,14 @@ import { FaBath } from "react-icons/fa";
 import { FaPhoneSquareAlt } from "react-icons/fa";
 import { Link } from 'react-router'
 import Geolocation from './Geolocation';
-function Card({$id, title, gallery, description,location,city,bedroom, bathroom,price,contactNo
+function Card({$id, title, gallery,status, description,location,city,bedroom, bathroom,price,contactNo
   ,disabledAccess,parking, elevator, washingMachine, dishwasher, dateAvailable }) {
 
   return (
-    <Link to = {`/space/${$id}`}>
+
+    status&&<Link to = {`/space/${$id}`}>
         <div className=' bg-gray-100 rounded-xl p-4 shadow-md shadow-green-300 mb-12.5 flex md:flex-row flex-col text-[18px]'>
-            <div className='w-lg justify-center mb-4 pr-10.5'>
+            <div className='md:w-lg  w-2xs justify-center mb-4 pr-10.5'>
                 <img src={appwriteService.getFileView(gallery)}
                 alt={title}
                 className='rounded-xl w-4xl'/>
@@ -23,7 +24,7 @@ function Card({$id, title, gallery, description,location,city,bedroom, bathroom,
             <p>{description}</p>
             <p>{location}</p>
             <p>{city}</p>
-           <div className='flex flex-row gap-9.5'>
+           <div className='flex md:flex-row gap-4 md:gap-9'>
              <div className='flex flex-row gap-2.5'>
               <IoIosBed />
               <p>{bedroom} bedrooms</p>
@@ -56,7 +57,6 @@ function Card({$id, title, gallery, description,location,city,bedroom, bathroom,
 
             <p>{dishwasher ? 'dishwasher    |':''}</p>
 
-            <Geolocation/>
            
            </div>
            </div>

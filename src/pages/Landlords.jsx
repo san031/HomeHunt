@@ -25,7 +25,7 @@ function Landlords() {
             alt=""
             className="absolute md:h-screen md:w-full h-[160%]"
           />
-          <div className=" float-right pr-11 md:sticky">
+          <div className=" float-right md:pr-11 pr-2 md:sticky">
             <Addspace />
           </div>
         </div>

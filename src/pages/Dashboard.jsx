@@ -26,10 +26,9 @@ function Dashboard() {
       <ul>
         {spaces.map((space) => 
             <li key={space.$id}>
-              
-          <div  className='p-2 w-7xl h-2/5 relative left-15'>
+         
             <Card {...space}/>
-          </div>
+        
             
             </li> )
         }

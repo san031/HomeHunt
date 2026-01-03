@@ -105,7 +105,6 @@ function Space() {
           !isAuthor && (
             <div className='brcss'>
               <BookingReview space={space}/>
-        
             </div>
           )
         }

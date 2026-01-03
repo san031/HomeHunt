@@ -101,7 +101,7 @@ function SpaceForm({space}) {
       //useEffect me method ko optimize krne k liye usko variable me store krk
       // aur baad me optimize krne k liye usko unsubscribe kr dete h
   return (
-    <div className='glass md:w-125 w-full sticky '>
+    <div className='glass md:w-125 max-w-sm sticky '>
       <h1 className='text-3xl font-bold text-center'>Earn more from your property, do less</h1>
       <p className='text-center'>Find out if your property meets our criteria</p>
           <form

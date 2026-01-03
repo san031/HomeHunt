@@ -7,8 +7,9 @@ import { Form, useForm } from 'react-hook-form'
 import BookingReview from './BookingReview'
 import appwriteService from '../appwrite/config'
 import Confirmation from '../components/Confirmation'
+import { useLocation } from 'react-router'
 
-function GuestDetails({space}) {
+function GuestDetails() {
   const[confirmationPage,setConfirmationPage] = useState(false)
   const {register,handleSubmit} = useForm({
     defaultValues:{
@@ -19,14 +20,23 @@ function GuestDetails({space}) {
     }
   })
 
- 
-  
+  const location = useLocation()
+  const space = location.state||{}
+  const booked_space_id= space.$id 
+  console.log(space.price);
 
   const submit = async(data) => {
     try {
-      const customerDetail = await appwriteService.createCustomer({...data})
+      const customerDetail = await appwriteService.createCustomer({...data,booked_space_id})
       if(customerDetail){
         setConfirmationPage(true)
+        await appwriteService.updatePost(
+          booked_space_id,{
+            ...space,
+            status:false
+          }
+        )
+        
       }
     } catch (error) {
       console.log(error);
@@ -72,19 +82,17 @@ function GuestDetails({space}) {
 
           <div>
             <p className='text-2xl'>Payment Method</p>
-            <Button type="submit"  >Pay Now</Button>
+            <Button type="submit">Pay Now</Button>
+            {confirmationPage && <Confirmation/>}
           </div>
           </div>
         </form>
 
         <div className='brcss'>
-          <BookingReview/>
+          <BookingReview space={space}/>
         </div>
       </div>
 
-      {
-        confirmationPage?<Confirmation/>:""
-      }
     </Container>
   )
 }

@@ -6,7 +6,7 @@ function BookingReview({space}) {
 
   const navigate = useNavigate()
   const [isGuestDetail,setisGuestDetail] = useState(true)
-  console.log(space?.price);
+  
   return (
      <div className=' m-3 p-5 '>
             <div className='glass w-96 h-full text-center shadow-xl/30 '>
@@ -27,7 +27,7 @@ function BookingReview({space}) {
                 isGuestDetail ? <Button margin='m-5' className='pointer' onClick = {() => 
               {
                 setisGuestDetail(false)
-              navigate('/guest-details',{space})
+              navigate('/guest-details',{state:space})
             }
 
               }>Continue Booking</Button>:"Payment Timeline"

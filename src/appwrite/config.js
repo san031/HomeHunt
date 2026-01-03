@@ -227,7 +227,7 @@ export class Service{
         }
     }
 
-    async createCustomer({first_name,last_name,email,contactNo}){
+    async createCustomer({first_name,last_name,email,contactNo,booked_space_id }){
         try {
             const res = await this.databases.createDocument(
                 conf.appwriteDatabaseId,
@@ -237,7 +237,8 @@ export class Service{
                     first_name,
                     last_name,
                     email,
-                    contactNo
+                    contactNo,
+                    booked_space_id
                 }
             )
             return res
